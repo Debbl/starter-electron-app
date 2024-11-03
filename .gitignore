@@ -1,0 +1,12 @@
+# Mac
+.DS_Store
+
+# turbo
+.turbo
+
+# render
+.next
+out
+
+dist
+node_modules

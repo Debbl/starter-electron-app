@@ -1,0 +1,35 @@
+{
+  "name": "@starter-electron-app/main",
+  "version": "0.0.0",
+  "private": "true",
+  "packageManager": "pnpm@9.12.3",
+  "description": "main",
+  "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "pnpm build --watch",
+    "build": "rollup -c --configPlugin typescript",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^3.0.0"
+  },
+  "devDependencies": {
+    "@debbl/eslint-config": "^3.8.3",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/node": "^22.8.7",
+    "eslint": "^9.14.0",
+    "rollup": "^4.24.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

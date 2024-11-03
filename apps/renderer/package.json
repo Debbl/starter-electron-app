@@ -1,0 +1,40 @@
+{
+  "name": "@starter-electron-app/renderer",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.12.3",
+  "description": "renderer",
+  "author": "Brendan Dash <me@aiwna.run> (https://github.com/Debbl/)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/theme": "^2.2.11",
+    "framer-motion": "^11.11.11",
+    "next": "^15.0.2",
+    "react": "19.0.0-rc.0",
+    "react-dom": "19.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@debbl/eslint-config": "^3.8.3",
+    "@next/bundle-analyzer": "^15.0.2",
+    "@types/node": "^22.8.7",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "babel-plugin-react-compiler": "19.0.0-beta-9ee70a1-20241017",
+    "eslint": "^9.14.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  }
+}
