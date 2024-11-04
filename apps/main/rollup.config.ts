@@ -8,7 +8,7 @@ export default defineConfig([
     input: "src/index.ts",
     output: [
       {
-        dir: "dist",
+        dir: "../../dist/main",
         format: "cjs",
       },
     ],
