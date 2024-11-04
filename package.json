@@ -6,17 +6,20 @@
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run/)",
   "license": "MIT",
   "keywords": [],
-  "main": "apps/main/dist/index.js",
+  "main": "dist/main/index.js",
   "scripts": {
-    "dev": "turbo build --filter @starter-electron-app/main && concurrently \"electron .\" \"turbo dev\"",
+    "predev": "turbo build --filter @starter-electron-app/main",
+    "dev": "concurrently \"electron .\" \"turbo dev\"",
     "build": "turbo build",
-    "build:main": "turbo build:main",
+    "package": "electron-forge package",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@debbl/eslint-config": "^3.8.3",
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/shared-types": "^7.5.0",
     "@types/node": "^22.8.7",
     "concurrently": "^9.0.1",
     "electron": "^33.0.2",

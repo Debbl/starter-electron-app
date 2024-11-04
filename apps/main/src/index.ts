@@ -1,3 +1,4 @@
+import path from "node:path";
 import { is } from "@electron-toolkit/utils";
 import { app, BrowserWindow } from "electron";
 import { waitForPort } from "get-port-please";
@@ -22,7 +23,7 @@ function createWindow() {
         throw new Error(`Failed to start the renderer server on port ${port}`);
       });
   } else {
-    mainWindow.loadFile("index.html");
+    mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
   }
 
   return mainWindow;
