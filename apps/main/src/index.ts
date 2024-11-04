@@ -14,9 +14,13 @@ function createWindow() {
   if (is.dev) {
     const port = 3000;
     // delay (20 * 500 = 20_000)s to load for next server is ready
-    waitForPort(port, { retries: 20 }).then(() => {
-      mainWindow.loadURL(`http://localhost:${port}`);
-    });
+    waitForPort(port, { delay: 500, retries: 20 })
+      .then(() => {
+        mainWindow.loadURL(`http://localhost:${port}`);
+      })
+      .catch(() => {
+        throw new Error(`Failed to start the renderer server on port ${port}`);
+      });
   } else {
     mainWindow.loadFile("index.html");
   }
