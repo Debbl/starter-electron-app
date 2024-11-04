@@ -1,5 +1,6 @@
 import { is } from "@electron-toolkit/utils";
 import { app, BrowserWindow } from "electron";
+import { waitForPort } from "get-port-please";
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -11,7 +12,11 @@ function createWindow() {
   });
 
   if (is.dev) {
-    mainWindow.loadURL("http://localhost:3000");
+    const port = 3000;
+    // delay (20 * 500 = 20_000)s to load for next server is ready
+    waitForPort(port, { retries: 20 }).then(() => {
+      mainWindow.loadURL(`http://localhost:${port}`);
+    });
   } else {
     mainWindow.loadFile("index.html");
   }
