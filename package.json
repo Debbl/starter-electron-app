@@ -8,8 +8,7 @@
   "keywords": [],
   "main": "dist/main/index.js",
   "scripts": {
-    "predev": "turbo build --filter @starter-electron-app/main",
-    "dev": "concurrently \"electron .\" \"turbo dev\"",
+    "dev": "node scripts/dev.mjs",
     "build": "turbo build",
     "package": "node scripts/package.mjs",
     "lint": "turbo lint",

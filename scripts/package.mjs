@@ -2,27 +2,9 @@
 "use strict";
 
 import fs from "node:fs";
-import path from "node:path";
 import { execa } from "execa";
-import { logger } from "./logger.mjs";
-
-function copy(src, dest) {
-  const stat = fs.statSync(src);
-  if (stat.isDirectory()) {
-    copyDir(src, dest);
-  } else {
-    fs.copyFileSync(src, dest);
-  }
-}
-
-function copyDir(srcDir, destDir) {
-  fs.mkdirSync(destDir, { recursive: true });
-  for (const file of fs.readdirSync(srcDir)) {
-    const srcFile = path.resolve(srcDir, file);
-    const destFile = path.resolve(destDir, file);
-    copy(srcFile, destFile);
-  }
-}
+import { copyDir } from "./utils/index.mjs";
+import { logger } from "./utils/logger.mjs";
 
 async function main() {
   // delete dist directory
