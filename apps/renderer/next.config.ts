@@ -11,7 +11,6 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   output: "export",
-  distDir: "../../dist/renderer",
   assetPrefix: isDev ? undefined : "./",
   experimental: {
     reactCompiler: true,
