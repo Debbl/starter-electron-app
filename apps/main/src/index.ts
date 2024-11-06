@@ -1,6 +1,6 @@
 import path from "node:path";
 import { is } from "@electron-toolkit/utils";
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import { waitForPort } from "get-port-please";
 
 function createWindow() {
@@ -8,7 +8,7 @@ function createWindow() {
     width: 900,
     height: 670,
     webPreferences: {
-      nodeIntegration: true,
+      preload: path.join(__dirname, "../preload/index.js"),
     },
   });
 
@@ -33,6 +33,12 @@ app.whenReady().then(() => {
   const mainWindow = createWindow();
 
   mainWindow.on("ready-to-show", () => mainWindow.show());
+
+  ipcMain.on("ping", (event, data) => {
+    // eslint-disable-next-line no-console
+    console.log("ping", data);
+    event.reply("pong", data);
+  });
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

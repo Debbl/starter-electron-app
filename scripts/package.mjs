@@ -12,7 +12,7 @@ async function main() {
   logger.info("Deleted dist directory");
 
   // copy dist files from apps/main and apps/renderer
-  copyDir("apps/main/dist", "dist/main");
+  copyDir("apps/main/dist", "dist");
   logger.info("Copied apps/main/dist to dist/main");
 
   copyDir("apps/renderer/out", "dist/renderer");

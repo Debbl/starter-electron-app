@@ -1,5 +1,6 @@
 import { m } from "~/lib/framer-motion";
 import Counter from "./Counter";
+import IPC from "./IPC";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         className="size-16 rounded-md border bg-blue-600"
       />
       <Counter />
+      <IPC />
     </main>
   );
 }

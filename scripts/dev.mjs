@@ -9,7 +9,7 @@ async function main() {
   logger.info("Preparing build for start electron...");
   await execa("turbo", ["build", "--filter", "@starter-electron-app/main"]);
 
-  copyDir("apps/main/dist", "dist/main");
+  copyDir("apps/main/dist", "dist");
   logger.info("Prebuild done and copied apps/main/dist to dist/main");
 
   logger.info("Starting dev electron...");
