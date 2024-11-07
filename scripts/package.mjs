@@ -6,7 +6,7 @@ import { execa } from "execa";
 import { copyDir } from "./utils/index.mjs";
 import { logger } from "./utils/logger.mjs";
 
-async function main() {
+export async function main() {
   // delete dist directory
   fs.rmSync("dist", { recursive: true, force: true });
   logger.info("Deleted dist directory");
@@ -20,7 +20,7 @@ async function main() {
 
   // exec electron-forge package
   logger.info("Running electron-forge package");
-  execa("electron-forge", ["package"], { stdio: "inherit" });
+  await execa("electron-forge", ["package"], { stdio: "inherit" });
 }
 
 main();

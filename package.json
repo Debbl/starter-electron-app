@@ -11,7 +11,7 @@
     "dev": "node scripts/dev.mjs",
     "build": "turbo build",
     "package": "node scripts/package.mjs",
-    "make": "electron-forge make",
+    "make": "node scripts/make.mjs",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "prepare": "simple-git-hooks"
