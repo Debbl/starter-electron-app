@@ -1,3 +1,4 @@
+import { MakerZIP } from "@electron-forge/maker-zip";
 import type { ForgeConfig } from "@electron-forge/shared-types";
 
 const config: ForgeConfig = {
@@ -12,13 +13,7 @@ const config: ForgeConfig = {
       return !keepPaths.some((keepPath) => path.startsWith(keepPath));
     },
   },
-  makers: [
-    {
-      name: "@electron-forge/maker-zip",
-      platforms: ["darwin"],
-      config: {},
-    },
-  ],
+  makers: [new MakerZIP({}, ["darwin"])],
 };
 
 export default config;
