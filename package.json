@@ -21,14 +21,15 @@
     "@electron-forge/cli": "^7.5.0",
     "@electron-forge/maker-zip": "^7.5.0",
     "@electron-forge/shared-types": "^7.5.0",
-    "@types/node": "^22.8.7",
+    "@types/node": "^22.9.0",
     "chalk": "^5.3.0",
-    "electron": "^33.0.2",
+    "electron": "^33.2.0",
     "eslint": "^9.14.0",
     "execa": "^9.5.1",
     "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
-    "turbo": "^2.2.3"
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
