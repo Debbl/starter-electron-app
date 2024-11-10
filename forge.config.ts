@@ -1,3 +1,5 @@
+import { MakerDMG } from "@electron-forge/maker-dmg";
+import { MakerSquirrel } from "@electron-forge/maker-squirrel";
 import { MakerZIP } from "@electron-forge/maker-zip";
 import type { ForgeConfig } from "@electron-forge/shared-types";
 
@@ -13,7 +15,7 @@ const config: ForgeConfig = {
       return !keepPaths.some((keepPath) => path.startsWith(keepPath));
     },
   },
-  makers: [new MakerZIP({}, ["darwin"])],
+  makers: [new MakerZIP({}, ["darwin"]), new MakerSquirrel(), new MakerDMG()],
 };
 
 export default config;

@@ -19,6 +19,8 @@
   "devDependencies": {
     "@debbl/eslint-config": "^3.8.3",
     "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-dmg": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
     "@electron-forge/maker-zip": "^7.5.0",
     "@electron-forge/shared-types": "^7.5.0",
     "@types/node": "^22.9.0",
