@@ -11,6 +11,8 @@ export default function IPC() {
   };
 
   useEffect(() => {
+    if (!window.ipcRenderer) return;
+
     ipcRenderer.current = window.ipcRenderer;
     ipcRenderer.current.on("pong", (_, data) => {
       // eslint-disable-next-line no-console

@@ -16,8 +16,6 @@ This is a starter template for an Electron app. Using `next.js` for the renderer
 
 <img width="985" alt="image" src="https://github.com/user-attachments/assets/71dce0ff-c12d-49c9-90fa-e331cbe46aef">
 
-
-
 ## HRM (Hot Module Replacement)
 
 ### Dev
