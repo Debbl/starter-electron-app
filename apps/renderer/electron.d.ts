@@ -5,7 +5,7 @@ export interface IpcRenderer {
 
 declare global {
   interface Window {
-    ipcRenderer: IpcRenderer;
+    ipcRenderer?: IpcRenderer;
   }
 }
 

@@ -37,7 +37,7 @@ app.whenReady().then(() => {
   ipcMain.on("ping", (event, data) => {
     // eslint-disable-next-line no-console
     console.log("ping", data);
-    event.reply("pong", data);
+    event.reply("pong ->", data);
   });
 
   app.on("activate", () => {

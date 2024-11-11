@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "pnpm build --no-watch.clearScreen",
+    "dev": "pnpm build --watch",
     "build": "rollup -c --configPlugin typescript",
     "test": "vitest",
     "typecheck": "tsc --noEmit",

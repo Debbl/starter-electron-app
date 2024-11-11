@@ -3,17 +3,21 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { defineConfig } from "rollup";
-import type { InputPluginOption } from "rollup";
+import type { RollupOptions } from "rollup";
 
-const plugins: InputPluginOption = [
-  typescript(),
-  nodeResolve(),
-  commonjs(),
-  terser(),
-];
+function getConfigWithCommonOptions(options: RollupOptions): RollupOptions {
+  return {
+    plugins: [typescript(), nodeResolve(), commonjs(), terser()],
+    external: ["electron"],
+    watch: {
+      clearScreen: false,
+    },
+    ...options,
+  };
+}
 
 export default defineConfig([
-  {
+  getConfigWithCommonOptions({
     input: "src/index.ts",
     output: [
       {
@@ -21,10 +25,8 @@ export default defineConfig([
         format: "cjs",
       },
     ],
-    plugins,
-    external: ["electron"],
-  },
-  {
+  }),
+  getConfigWithCommonOptions({
     input: "preload/index.ts",
     output: [
       {
@@ -32,7 +34,5 @@ export default defineConfig([
         format: "cjs",
       },
     ],
-    plugins,
-    external: ["electron"],
-  },
+  }),
 ]);
