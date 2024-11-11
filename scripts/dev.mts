@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
-/* eslint-disable n/prefer-global/process */
 
+/* eslint-disable n/prefer-global/process */
 import path from "node:path";
 import chokidar from "chokidar";
 import { execa } from "execa";
@@ -16,15 +16,29 @@ function buildMain() {
 }
 
 function startMainProcess() {
-  return execa("electron", ["."], {
+  const child = execa("electron", ["."], {
     stdio: "inherit",
+    detached: true,
   });
+  // unref so the main process can exit independently of the child process
+  child.unref();
+
+  return child;
 }
 
 function startRendererProcess() {
-  return execa("pnpm", ["--filter", "@starter-electron-app/renderer", "dev"], {
-    stdio: "inherit",
+  const child = execa(
+    "pnpm",
+    ["--filter", "@starter-electron-app/renderer", "dev"],
+    {
+      stdio: "inherit",
+    },
+  );
+  child.on("close", () => {
+    process.exit(0);
   });
+
+  return child;
 }
 
 async function main() {
