@@ -6,6 +6,7 @@ import chokidar from "chokidar";
 import { execa } from "execa";
 import { copyDir } from "./utils/index.mts";
 import { logger } from "./utils/logger.mts";
+import type { ResultPromise } from "execa";
 
 const CWD = process.cwd();
 
@@ -50,23 +51,9 @@ async function main() {
 
   logger.info("Starting dev electron...");
 
-  let mainProcess = startMainProcess();
-  const rendererProcess = startRendererProcess();
-
-  process.on("SIGINT", killWholeProcess);
-  process.on("SIGTERM", killWholeProcess);
-  process.on("exit", killWholeProcess);
-
-  const watcher = chokidar
-    .watch(path.join(CWD, "apps/main/src"))
-    .on("change", async () => {
-      mainProcess.kill();
-
-      await buildMain();
-      await copyDir("apps/main/dist", "dist");
-
-      mainProcess = startMainProcess();
-    });
+  let mainProcess: ResultPromise | null;
+  let rendererProcess: ResultPromise | null;
+  const watcher = chokidar.watch(path.join(CWD, "apps/main/src"));
 
   function killWholeProcess() {
     watcher?.close();
@@ -74,6 +61,21 @@ async function main() {
     mainProcess?.kill();
     rendererProcess?.kill();
   }
+
+  process.on("SIGINT", killWholeProcess);
+  process.on("SIGTERM", killWholeProcess);
+  process.on("exit", killWholeProcess);
+
+  mainProcess = startMainProcess();
+  rendererProcess = startRendererProcess();
+  watcher.on("change", async () => {
+    mainProcess?.kill();
+
+    await buildMain();
+    await copyDir("apps/main/dist", "dist");
+
+    mainProcess = startMainProcess();
+  });
 }
 
 main();
