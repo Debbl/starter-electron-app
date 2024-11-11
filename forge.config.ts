@@ -15,7 +15,11 @@ const config: ForgeConfig = {
       return !keepPaths.some((keepPath) => path.startsWith(keepPath));
     },
   },
-  makers: [new MakerZIP({}, ["darwin"]), new MakerSquirrel(), new MakerDMG()],
+  makers: [
+    new MakerZIP({}, ["darwin", "linux"]),
+    new MakerSquirrel(),
+    new MakerDMG(),
+  ],
 };
 
 export default config;
