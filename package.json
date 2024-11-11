@@ -1,6 +1,7 @@
 {
   "name": "starter-electron-app",
-  "version": "1.0.0",
+  "productName": "Starter Electron App",
+  "version": "0.0.0",
   "packageManager": "pnpm@9.12.3",
   "description": "starter-electron-app",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run/)",
