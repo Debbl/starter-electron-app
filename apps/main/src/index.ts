@@ -1,7 +1,6 @@
 import path from "node:path";
 import { is, platform } from "@electron-toolkit/utils";
 import { app, BrowserWindow, ipcMain } from "electron";
-import { waitForPort } from "get-port-please";
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -14,14 +13,7 @@ function createWindow() {
 
   if (is.dev) {
     const port = 3000;
-    // delay (20 * 500 = 10_000)ms to load for next server is ready
-    waitForPort(port, { delay: 500, retries: 20 })
-      .then(() => {
-        mainWindow.loadURL(`http://localhost:${port}`);
-      })
-      .catch(() => {
-        throw new Error(`Failed to start the renderer server on port ${port}`);
-      });
+    mainWindow.loadURL(`http://localhost:${port}`);
   } else {
     mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
   }

@@ -4,6 +4,7 @@
 import path from "node:path";
 import chokidar from "chokidar";
 import { execa } from "execa";
+import { waitForPort } from "get-port-please";
 import { copyDir } from "./utils/index.mts";
 import { logger } from "./utils/logger.mts";
 import type { ResultPromise } from "execa";
@@ -66,8 +67,18 @@ async function main() {
   process.on("SIGTERM", killWholeProcess);
   process.on("exit", killWholeProcess);
 
-  mainProcess = startMainProcess();
   rendererProcess = startRendererProcess();
+
+  const port = 3000;
+  // delay (20 * 500 = 10_000)ms to load for next server is ready
+  waitForPort(port, { delay: 500, retries: 20 })
+    .then(() => {
+      mainProcess = startMainProcess();
+    })
+    .catch(() => {
+      throw new Error(`Failed to start the renderer server on port ${port}`);
+    });
+
   watcher.on("change", async () => {
     mainProcess?.kill();
 
