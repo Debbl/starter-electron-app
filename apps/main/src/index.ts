@@ -1,5 +1,5 @@
 import path from "node:path";
-import { is } from "@electron-toolkit/utils";
+import { is, platform } from "@electron-toolkit/utils";
 import { app, BrowserWindow, ipcMain } from "electron";
 import { waitForPort } from "get-port-please";
 
@@ -46,5 +46,5 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => {
-  app.quit();
+  if (!platform.isMacOS) app.quit();
 });
