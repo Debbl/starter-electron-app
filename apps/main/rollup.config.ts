@@ -27,7 +27,7 @@ export default defineConfig([
     ],
   }),
   getConfigWithCommonOptions({
-    input: "preload/index.ts",
+    input: "src/preload/index.ts",
     output: [
       {
         dir: "dist/preload",

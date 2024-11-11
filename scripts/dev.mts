@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+/* eslint-disable n/prefer-global/process */
 
 import path from "node:path";
 import chokidar from "chokidar";
@@ -6,48 +7,59 @@ import { execa } from "execa";
 import { copyDir } from "./utils/index.mts";
 import { logger } from "./utils/logger.mts";
 
-// eslint-disable-next-line n/prefer-global/process
 const CWD = process.cwd();
 
-function startElectron() {
+function buildMain() {
+  return execa("pnpm", ["--filter", "@starter-electron-app/main", "build"], {
+    stdio: "inherit",
+  });
+}
+
+function startMainProcess() {
   return execa("electron", ["."], {
+    stdio: "inherit",
+  });
+}
+
+function startRendererProcess() {
+  return execa("pnpm", ["--filter", "@starter-electron-app/renderer", "dev"], {
     stdio: "inherit",
   });
 }
 
 async function main() {
   logger.info("Preparing build for start electron...");
-  await execa("turbo", ["build", "--filter", "@starter-electron-app/main"]);
+  await buildMain();
 
   await copyDir("apps/main/dist", "dist");
   logger.info("Prebuild done and copied apps/main/dist to dist");
 
   logger.info("Starting dev electron...");
 
-  let mainProcess = startElectron();
-  const watcher = chokidar.watch(path.join(CWD, "apps/main/dist"));
+  let mainProcess = startMainProcess();
+  const rendererProcess = startRendererProcess();
 
-  execa("turbo", ["dev"], {
-    stdio: "inherit",
-  });
+  process.on("SIGINT", killWholeProcess);
+  process.on("SIGTERM", killWholeProcess);
+  process.on("exit", killWholeProcess);
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  logger.info("Starting watch the main process...");
-  // FIXME skip first two events
-  let skip = 0;
-  watcher.on("change", async () => {
-    if (skip < 2) {
-      skip++;
-      return;
-    }
+  const watcher = chokidar
+    .watch(path.join(CWD, "apps/main/src"))
+    .on("change", async () => {
+      mainProcess.kill();
 
-    await copyDir("apps/main/dist", "dist");
+      await buildMain();
+      await copyDir("apps/main/dist", "dist");
 
-    logger.info("Rebuilding main process...");
+      mainProcess = startMainProcess();
+    });
 
-    mainProcess.kill("SIGINT");
-    mainProcess = startElectron();
-  });
+  function killWholeProcess() {
+    watcher?.close();
+
+    mainProcess?.kill();
+    rendererProcess?.kill();
+  }
 }
 
 main();
