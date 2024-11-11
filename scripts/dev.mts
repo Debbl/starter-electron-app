@@ -1,11 +1,10 @@
-#!user/bin/env node
-"use strict";
+#!/usr/bin/env tsx
 
 import path from "node:path";
 import chokidar from "chokidar";
 import { execa } from "execa";
-import { copyDir } from "./utils/index.mjs";
-import { logger } from "./utils/logger.mjs";
+import { copyDir } from "./utils/index.mts";
+import { logger } from "./utils/logger.mts";
 
 // eslint-disable-next-line n/prefer-global/process
 const CWD = process.cwd();

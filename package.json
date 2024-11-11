@@ -9,10 +9,10 @@
   "keywords": [],
   "main": "dist/main/index.js",
   "scripts": {
-    "dev": "node scripts/dev.mjs",
+    "dev": "tsx scripts/dev.mts",
     "build": "turbo build",
-    "package": "node scripts/package.mjs",
-    "make": "node scripts/make.mjs",
+    "package": "tsx scripts/package.mts",
+    "make": "tsx scripts/make.mts",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "prepare": "simple-git-hooks"
@@ -32,6 +32,7 @@
     "execa": "^9.5.1",
     "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
+    "tsx": "^4.19.2",
     "turbo": "^2.2.3",
     "typescript": "^5.6.3"
   },

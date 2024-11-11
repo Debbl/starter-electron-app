@@ -1,10 +1,9 @@
-#!/usr/bin/env node
-"use strict";
+#!/usr/bin/env tsx
 
 import fs from "node:fs";
 import { execa } from "execa";
-import { copyDir } from "./utils/index.mjs";
-import { logger } from "./utils/logger.mjs";
+import { copyDir } from "./utils/index.mts";
+import { logger } from "./utils/logger.mts";
 
 export async function main() {
   // delete dist directory

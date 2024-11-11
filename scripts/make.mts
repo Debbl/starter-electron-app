@@ -1,10 +1,9 @@
-#!user/bin/env node
-"use strict";
+#!/usr/bin/env tsx
 
 import { execa } from "execa";
 
 async function main() {
-  await execa("node", ["scripts/package.mjs"], {
+  await execa("tsx", ["scripts/package.mts"], {
     stdio: "inherit",
   });
 
