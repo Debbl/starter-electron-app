@@ -68,9 +68,6 @@ importers:
       '@electron-toolkit/utils':
         specifier: ^3.0.0
         version: 3.0.0(electron@33.2.0)
-      get-port-please:
-        specifier: ^3.1.2
-        version: 3.1.2
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
