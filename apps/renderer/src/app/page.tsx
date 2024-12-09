@@ -1,4 +1,4 @@
-import { m } from "~/lib/framer-motion";
+import { m } from "~/lib/motion";
 import Counter from "./Counter";
 import IPC from "./IPC";
 

@@ -1,5 +1,5 @@
 import { NextUIProvider } from "@nextui-org/react";
-import { domMax, LazyMotion } from "framer-motion";
+import { domMax, LazyMotion } from "motion/react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
