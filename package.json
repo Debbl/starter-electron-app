@@ -18,24 +18,24 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@debbl/eslint-config": "^3.8.3",
-    "@electron-forge/cli": "^7.5.0",
-    "@electron-forge/maker-dmg": "^7.5.0",
-    "@electron-forge/maker-squirrel": "^7.5.0",
-    "@electron-forge/maker-zip": "^7.5.0",
-    "@electron-forge/shared-types": "^7.5.0",
-    "@types/node": "^22.9.0",
+    "@debbl/eslint-config": "^3.8.4",
+    "@electron-forge/cli": "^7.6.0",
+    "@electron-forge/maker-dmg": "^7.6.0",
+    "@electron-forge/maker-squirrel": "^7.6.0",
+    "@electron-forge/maker-zip": "^7.6.0",
+    "@electron-forge/shared-types": "^7.6.0",
+    "@types/node": "^22.10.1",
     "chalk": "^5.3.0",
     "chokidar": "^4.0.1",
-    "electron": "^33.2.0",
-    "eslint": "^9.14.0",
-    "execa": "^9.5.1",
+    "electron": "^33.2.1",
+    "eslint": "^9.16.0",
+    "execa": "^9.5.2",
     "get-port-please": "^3.1.2",
     "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.2",
-    "turbo": "^2.2.3",
-    "typescript": "^5.6.3"
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
