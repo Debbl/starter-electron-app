@@ -12,7 +12,7 @@ import type { ResultPromise } from "execa";
 const CWD = process.cwd();
 
 function buildMain() {
-  return execa("pnpm", ["--filter", "@starter-electron-app/main", "build"], {
+  return execa("pnpm", ["--filter", "@repo/main", "build"], {
     stdio: "inherit",
   });
 }
@@ -29,13 +29,9 @@ function startMainProcess() {
 }
 
 function startRendererProcess() {
-  const child = execa(
-    "pnpm",
-    ["--filter", "@starter-electron-app/renderer", "dev"],
-    {
-      stdio: "inherit",
-    },
-  );
+  const child = execa("pnpm", ["--filter", "@repo/renderer", "dev"], {
+    stdio: "inherit",
+  });
   child.on("close", () => {
     process.exit(0);
   });

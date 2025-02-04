@@ -1,5 +1,5 @@
 {
-  "name": "@starter-electron-app/renderer",
+  "name": "@repo/renderer",
   "type": "module",
   "version": "0.0.0",
   "private": true,
