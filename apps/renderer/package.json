@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.2.0",
   "description": "renderer",
   "author": "Brendan Dash <me@aiwna.run> (https://github.com/Debbl/)",
   "license": "MIT",
@@ -17,20 +17,20 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.6.5",
-    "@nextui-org/theme": "^2.4.1",
+    "@nextui-org/react": "^2.6.11",
+    "@nextui-org/theme": "^2.4.5",
     "motion": "12.0.5",
-    "next": "^15.0.4",
+    "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.0.4",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.2",
+    "@next/bundle-analyzer": "^15.1.6",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
     "babel-plugin-react-compiler": "beta",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "tailwindcss": "^3.4.16"
   }
 }
