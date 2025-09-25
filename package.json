@@ -2,7 +2,7 @@
   "name": "starter-electron-app",
   "productName": "Starter Electron App",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.17.1",
   "description": "starter-electron-app",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run/)",
   "license": "MIT",
