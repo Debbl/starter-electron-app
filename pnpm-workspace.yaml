@@ -1,2 +1,12 @@
 packages:
-  - "apps/*"
+  - apps/*
+
+onlyBuiltDependencies:
+  - electron
+  - electron-winstaller
+  - esbuild
+  - fs-xattr
+  - macos-alias
+  - sharp
+  - simple-git-hooks
+  - unrs-resolver
