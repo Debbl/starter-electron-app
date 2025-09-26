@@ -14,6 +14,7 @@
     "package": "tsx scripts/package.mts",
     "make": "tsx scripts/make.mts",
     "lint": "turbo lint",
+    "lint:fix": "turbo lint -- --fix",
     "typecheck": "turbo typecheck",
     "prepare": "simple-git-hooks"
   },
@@ -29,6 +30,7 @@
     "chokidar": "^4.0.3",
     "electron": "^34.0.2",
     "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.1.8",
     "execa": "^9.5.2",
     "get-port-please": "^3.1.2",
     "lint-staged": "^15.4.3",

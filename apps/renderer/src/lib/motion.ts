@@ -1,1 +1,1 @@
-export * as m from "motion/react-client";
+export * as m from 'motion/react-client'
