@@ -1,5 +1,6 @@
 {
   "name": "@repo/main",
+  "type": "module",
   "version": "0.0.0",
   "private": "true",
   "packageManager": "pnpm@10.18.3",
@@ -11,8 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "pnpm build --watch",
-    "build": "rollup -c --configPlugin typescript",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -22,11 +23,7 @@
     "@electron-toolkit/utils": "^4.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.8",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.4",
-    "rollup": "^4.52.5",
+    "tsdown": "^0.15.9",
     "vitest": "^3.2.4"
   }
 }
