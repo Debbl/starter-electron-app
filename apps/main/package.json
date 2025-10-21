@@ -2,7 +2,7 @@
   "name": "@repo/main",
   "version": "0.0.0",
   "private": "true",
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.18.3",
   "description": "main",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "license": "MIT",
@@ -22,11 +22,11 @@
     "@electron-toolkit/utils": "^4.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.6",
-    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-commonjs": "^28.0.8",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
-    "rollup": "^4.52.2",
+    "rollup": "^4.52.5",
     "vitest": "^3.2.4"
   }
 }

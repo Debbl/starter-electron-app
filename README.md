@@ -5,9 +5,8 @@
 This is a starter template for an Electron app. Using `next.js` for the renderer.
 
 - next.js
-
   - framer-motion
-  - nextorg-ui
+  - nextui-org/react
   - tailwindcss
 
 - electron-forge
