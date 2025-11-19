@@ -1,6 +1,6 @@
 import { m } from '~/lib/motion'
-import Counter from './Counter'
-import IPC from './IPC'
+import Counter from './counter'
+import IPC from './ipc'
 
 export default function Home() {
   return (
