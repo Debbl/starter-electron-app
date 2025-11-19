@@ -16,8 +16,8 @@
     "build": "tsdown",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0"

@@ -1,6 +1,6 @@
 'use client'
-import { Button } from '@nextui-org/react'
 import { useEffect } from 'react'
+import { Button } from '~/components/ui/button'
 
 export default function IPC() {
   const ping = () => {
