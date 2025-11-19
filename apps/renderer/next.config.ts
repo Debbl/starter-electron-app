@@ -12,9 +12,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
   output: 'export',
   assetPrefix: isDev ? undefined : './',
-  experimental: {
-    reactCompiler: true,
-  },
+  reactCompiler: true,
 }
 
 export default withBundleAnalyzer(nextConfig)

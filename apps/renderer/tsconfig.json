@@ -2,7 +2,7 @@
   "compilerOptions": {
     "incremental": true,
     "target": "ES6",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -28,7 +28,8 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "tailwind.config.ts",
-    "../../dist/renderer/types/**/*.ts"
+    "../../dist/renderer/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
