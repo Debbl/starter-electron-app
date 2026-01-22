@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": "true",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.28.1",
   "description": "main",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "license": "MIT",
@@ -12,8 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsdown --watch",
-    "build": "tsdown",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint",
@@ -23,7 +23,7 @@
     "@electron-toolkit/utils": "^4.0.0"
   },
   "devDependencies": {
-    "tsdown": "^0.16.5",
-    "vitest": "^4.0.10"
+    "tsup": "^8.5.1",
+    "vitest": "^4.0.17"
   }
 }
