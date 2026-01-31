@@ -44,6 +44,8 @@ jobs:
         run: pnpm run build
 
       - name: Make
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm run make -- --${{ matrix.arch }}
 
       - name: Upload file
