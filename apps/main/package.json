@@ -19,10 +19,8 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "dependencies": {
-    "@electron-toolkit/utils": "^4.0.0"
-  },
   "devDependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
     "tsup": "^8.5.1",
     "vitest": "^4.0.17"
   }
