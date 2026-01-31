@@ -8,8 +8,9 @@ directories:
 win:
   target:
     - nsis
-  oneClick: false
   artifactName: ${name}-${version}-windows-${arch}.${ext}
+nsis:
+  oneClick: false
 
 mac:
   target: dmg
