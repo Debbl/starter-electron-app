@@ -1,10 +1,10 @@
-import chalk from "chalk";
+import chalk from 'chalk'
 
 export const logger = {
   info: (message: string) => {
-    console.log(chalk.green(message));
+    console.log(chalk.green(message))
   },
   error: (message: string) => {
-    console.log(chalk.red(message));
+    console.log(chalk.red(message))
   },
-};
+}

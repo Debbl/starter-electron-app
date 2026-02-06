@@ -2,7 +2,7 @@
   "name": "starter-electron-app",
   "productName": "Starter Electron App",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.28.1",
+  "packageManager": "pnpm@10.28.2",
   "description": "starter-electron-app",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run/)",
   "license": "MIT",
@@ -19,11 +19,11 @@
   },
   "devDependencies": {
     "@debbl/eslint-config": "^3.14.35",
-    "@types/node": "^25.0.10",
+    "@types/node": "^25.2.1",
     "chalk": "^5.6.2",
     "chokidar": "^5.0.0",
-    "electron": "^40.0.0",
-    "electron-builder": "^26.4.0",
+    "electron": "^40.2.1",
+    "electron-builder": "^26.7.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "execa": "^9.6.1",
@@ -31,7 +31,7 @@
     "lint-staged": "^16.2.7",
     "simple-git-hooks": "^2.13.1",
     "tsx": "^4.21.0",
-    "turbo": "^2.7.5",
+    "turbo": "^2.8.3",
     "typescript": "^5.9.3"
   },
   "simple-git-hooks": {

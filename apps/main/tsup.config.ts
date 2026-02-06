@@ -7,6 +7,8 @@ export default defineConfig({
   },
   outDir: 'dist',
   format: 'cjs',
+  minify: true,
+  clean: true,
   external: ['electron'],
   treeshake: true,
 })

@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.0.0",
   "private": "true",
-  "packageManager": "pnpm@10.28.1",
+  "packageManager": "pnpm@10.28.2",
   "description": "main",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "license": "MIT",
-  "main": "dist/main/index.js",
+  "main": "dist/main/index.cjs",
   "files": [
     "dist"
   ],
@@ -22,6 +22,6 @@
   "devDependencies": {
     "@electron-toolkit/utils": "^4.0.0",
     "tsup": "^8.5.1",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   }
 }

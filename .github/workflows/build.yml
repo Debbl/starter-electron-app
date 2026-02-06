@@ -46,7 +46,7 @@ jobs:
       - name: Make
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run make -- --${{ matrix.arch }}
+        run: pnpm run make
 
       - name: Upload file
         uses: actions/upload-artifact@v5
