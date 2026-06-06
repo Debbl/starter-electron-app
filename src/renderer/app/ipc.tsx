@@ -8,10 +8,12 @@ export default function IPC() {
   }
 
   useEffect(() => {
-    window.ipcRenderer?.on('pong', (_, data) => {
+    const unsubscribe = window.ipcRenderer?.on('pong', (_, data) => {
       // eslint-disable-next-line no-console
       console.log('Pong', data)
     })
+
+    return () => unsubscribe?.()
   }, [])
 
   return (

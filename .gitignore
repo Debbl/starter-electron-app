@@ -1,12 +1,15 @@
 # Mac
 .DS_Store
 
+.pnpm-store
+
 # turbo
 .turbo
 
 # render
 .next
 out
+release
 
 dist
 node_modules

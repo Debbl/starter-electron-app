@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "~/*": ["src/renderer/*"],
+      "@/*": ["src/main/*"]
+    },
+    "resolveJsonModule": true,
+    "types": ["node", "vite/client"],
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "declaration": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "scripts/**/*.mts",
+    "electron.vite.config.ts",
+    "postcss.config.mjs",
+    "eslint.config.mjs"
+  ],
+  "exclude": ["node_modules", "dist", "out"]
+}

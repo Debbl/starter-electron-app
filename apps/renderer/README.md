@@ -1,1 +1,0 @@
-# starter-next-app

@@ -7,9 +7,9 @@ export async function buildElectron() {
       appId: 'com.electron.vault',
       productName: 'Starter',
       electronLanguages: ['en'],
-      files: ['dist'],
+      files: ['out/**/*', 'package.json'],
       directories: {
-        output: 'out',
+        output: 'release',
       },
       icon: 'assets/icon.png',
       win: {

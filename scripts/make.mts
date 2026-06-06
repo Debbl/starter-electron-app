@@ -1,23 +1,17 @@
 #!/usr/bin/env tsx
 
 import fs from 'node:fs'
+import { execa } from 'execa'
 import { buildElectron } from './electron-builder.mts'
-import { copyDir } from './utils/index.mts'
 import { logger } from './utils/logger.mts'
 
 export async function main() {
-  // delete dist directory
-  fs.rmSync('dist', { recursive: true, force: true })
-  logger.info('Deleted dist directory')
+  fs.rmSync('out', { recursive: true, force: true })
+  logger.info('Deleted out directory')
 
-  // copy dist files from apps/main and apps/renderer
-  copyDir('apps/main/dist', 'dist')
-  logger.info('Copied apps/main/dist to dist/main')
+  await execa('pnpm', ['build'], { stdio: 'inherit' })
+  logger.info('Built main and renderer')
 
-  copyDir('apps/renderer/out', 'dist/renderer')
-  logger.info('Copied apps/renderer/out to dist/renderer')
-
-  // exec electron builder
   await buildElectron()
 }
 

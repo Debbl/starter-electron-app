@@ -1,8 +1,8 @@
 import { m } from '~/lib/motion'
-import Counter from './counter'
-import IPC from './ipc'
+import Counter from './app/counter'
+import IPC from './app/ipc'
 
-export default function Home() {
+export default function App() {
   return (
     <main className='flex h-full flex-col items-center justify-center gap-y-4'>
       <m.div

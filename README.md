@@ -2,14 +2,14 @@
 
 **Please replace globally the `starter-electron-app` to your app name**
 
-This is a starter template for an Electron app. Using `next.js` for the renderer.
+This is a starter template for an Electron app. It follows the electron-vite React TypeScript template style, with a Vite renderer and Electron main/preload builds managed by electron-vite.
 
-- next.js
-  - framer-motion
-  - nextui-org/react
-  - tailwindcss
+- electron-vite
+  - React
+  - Motion
+  - Tailwind CSS
 
-- electron-forge
+- Electron Builder
 
 <img width="985" alt="image" src="https://github.com/user-attachments/assets/506e3aae-2048-4515-8445-92ad8b80f6a6">
 
@@ -19,6 +19,6 @@ This is a starter template for an Electron app. Using `next.js` for the renderer
 
 ### Dev
 
-main process: use the `rollup --no-watch.clearScreen` to watch the main process files changes but sometimes it cloud not work well. So, you need to use cli to restart the app.
+main process: `electron-vite dev` rebuilds and reloads the Electron main/preload code during development.
 
-renderer process: main process load the renderer process by `http://localhost:3000` so you cloud need to reload the app sometimes when the pages is not updated.
+renderer process: the main process loads the dev server URL from `ELECTRON_RENDERER_URL` during development.
