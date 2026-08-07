@@ -51,7 +51,7 @@
     "autoprefixer": "^10.5.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "chalk": "^5.6.2",
-    "electron": "^40.10.2",
+    "electron": "^41.10.3",
     "electron-builder": "^26.15.0",
     "electron-vite": "^5.0.0",
     "eslint": "^9.39.4",
